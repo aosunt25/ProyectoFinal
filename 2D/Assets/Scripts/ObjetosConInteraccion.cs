@@ -20,7 +20,8 @@ public class ObjetosConInteraccion : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            carta.SetActive(true);
+            if(carta!=null)
+                carta.SetActive(true);
         }
     }
     

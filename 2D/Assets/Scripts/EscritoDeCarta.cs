@@ -7,12 +7,8 @@ public class EscritoDeCarta : MonoBehaviour
 
     public GameObject texto;
     // Update is called once per frame
-    void Update()
+    public void Continuar()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            texto.SetActive(false);
-            Time.timeScale = 1;
-        }
+       gameObject.SetActive(false);
     }
 }

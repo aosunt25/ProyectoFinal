@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
     private  Animator animacion;
     private Rigidbody2D rb2d;
     private Vector2 mov;
@@ -27,7 +26,7 @@ public class Player : MonoBehaviour
        
         if(mov != Vector2.zero)
         {
-             animacion.SetFloat("moverX", mov.x);
+            animacion.SetFloat("moverX", mov.x);
             animacion.SetFloat("moverY", mov.y);
             animacion.SetBool("Caminando", true);
         }
@@ -40,6 +39,7 @@ public class Player : MonoBehaviour
             presionaECarta.gameObject.SetActive(false);
             presioneEMueble.gameObject.SetActive(false);
         }
+        
        
        
     }

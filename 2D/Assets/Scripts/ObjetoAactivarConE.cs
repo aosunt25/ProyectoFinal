@@ -15,7 +15,6 @@ public class ObjetoAactivarConE : MonoBehaviour
         {
             if (colision)
             {
-                
                 activarCarta();
             }
 
@@ -26,7 +25,6 @@ public class ObjetoAactivarConE : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             colision = true;
-            
         }
         
     }
@@ -37,9 +35,7 @@ public class ObjetoAactivarConE : MonoBehaviour
 
     private void activarCarta()
     {
- 
-            carta.SetActive(true);
-        
+             carta.SetActive(true);
     }
 
 }
