@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour
 {
-    public GameObject[] carta;
+    public EscritoDeCarta carta;
+    public GameObject[] botones;
+    int cantidadRecogida = GameMaster.cartasRecogidas;
     int boton = 0;
+    public void ActivarInventario()
+    {
+        gameObject.SetActive(true);
+    }
     public void checkAnswer(int bot)
     {
-        boton = bot - 1;
-        carta[boton].SetActive(true);
+        carta.SetActive();
+        carta.ActivarTexto(bot);
     }
     public void Continuar()
     {
-        carta[boton].SetActive(false);
+        carta.Continuar();
+
     }
-   
+    public void ActivarBoton(int num)
+    {
+        botones[num - 1].SetActive(true);
+    }
 }
+
+   

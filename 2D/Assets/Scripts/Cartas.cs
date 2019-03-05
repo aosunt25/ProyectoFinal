@@ -9,6 +9,7 @@ public class Cartas : MonoBehaviour
     // private Text botonParaRecoger;
     public GameObject texto;
     private bool recogerPermitir;
+    public int numDeCarta;
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,9 +42,12 @@ public class Cartas : MonoBehaviour
     }
     private void Recoger()
     {
+        
         texto.gameObject.SetActive(true);
         Destroy(gameObject);
         GameMaster.instance.contadorDeCartas();
+        GameMaster.instance.CartasRecogidas(numDeCarta);
+        GameMaster.instance.ActivarTexto(numDeCarta);
         Time.timeScale = 0;
     }
 }
