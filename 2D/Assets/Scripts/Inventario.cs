@@ -7,7 +7,7 @@ public class Inventario : MonoBehaviour
     public EscritoDeCarta carta;
     public GameObject[] botones;
     int cantidadRecogida = GameMaster.cartasRecogidas;
-    int boton = 0;
+
     public void ActivarInventario()
     {
         gameObject.SetActive(true);

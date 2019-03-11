@@ -35,7 +35,7 @@ public class GameMaster : MonoBehaviour
     public void Setup()
     {
         cloneplayer = Instantiate(player, transform.position, Quaternion.identity) as GameObject;
-        camara.SetPlayer(cloneplayer);
+       
     }
     public GameObject GetClonePLayere()
     {

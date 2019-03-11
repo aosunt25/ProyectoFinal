@@ -1,29 +1,29 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class ControladorDeCamara : MonoBehaviour
 {
+    public GameObject player;       //Public variable to store a reference to the player game object
 
-    private GameObject player;       //Public variable to store a reference to the player game object
 
-    public void SetPlayer(GameObject p)
-    {
-        player = p;
-    }
-    private Vector3 offset;         //Private variable to store the offset distance between the player and camera
+    private Vector2 velocidad;
 
-    // Use this for initialization
+    public float tiempoY;
+    public float tiempoX;
+
+   
+
     void Start()
     {
-      
-        //Calculate and store the offset value by getting the distance between the player's position and camera's position.
-        offset = transform.position - player.transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    // LateUpdate is called after Update each frame
-    void LateUpdate()
+    private void FixedUpdate()
     {
-        // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        transform.position = player.transform.position + offset;
-    }
+        float posx = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocidad.x, tiempoX);
+        float posy = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocidad.y, tiempoY);
+
+        transform.position = new Vector3(posx, posy, transform.position.z);
+
+    }   
 }

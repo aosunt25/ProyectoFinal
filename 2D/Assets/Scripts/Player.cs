@@ -9,9 +9,8 @@ public class Player : MonoBehaviour
     private  Animator animacion;
     private Rigidbody2D rb2d;
     private Vector2 mov = new Vector2(23,-11);
-    public Text presionaECarta;
-    public Text presioneEMueble;
-    float speed = 5.0f;
+
+    float speed = 2.0f;
 
      void Start()
     {

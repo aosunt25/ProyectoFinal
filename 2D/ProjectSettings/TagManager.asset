@@ -49,6 +49,15 @@ TagManager:
   - name: Backgound
     uniqueID: 2629617425
     locked: 0
+  - name: Piso
+    uniqueID: 1330655547
+    locked: 0
+  - name: Pared
+    uniqueID: 2855484873
+    locked: 0
+  - name: muebles
+    uniqueID: 1302170231
+    locked: 0
   - name: Cartas
     uniqueID: 3288604939
     locked: 0
