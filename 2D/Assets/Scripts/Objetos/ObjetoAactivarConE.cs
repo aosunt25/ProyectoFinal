@@ -22,7 +22,7 @@ public class ObjetoAactivarConE : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject == GameMaster.instance.GetClonePLayere())
         {
             colision = true;
         }
@@ -36,6 +36,7 @@ public class ObjetoAactivarConE : MonoBehaviour
     private void activarCarta()
     {
              carta.SetActive(true);
+             
     }
 
 }

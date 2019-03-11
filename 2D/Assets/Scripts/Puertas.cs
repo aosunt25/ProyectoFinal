@@ -17,7 +17,7 @@ public class Puertas : MonoBehaviour
     IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject== GameMaster.instance.GetClonePLayere())
         {
             collision.GetComponent<Animator>().enabled = false;
             collision.GetComponent<Player>().enabled = false;

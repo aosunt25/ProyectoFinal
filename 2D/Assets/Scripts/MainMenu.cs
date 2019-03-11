@@ -9,8 +9,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         InformacionDeJugar data = SavingSystem.CargarJugador();
         GameMaster.cartasRecogidas = data.cartas;
+        GameMaster.posicion[0] = data.posicion[0];
+        GameMaster.posicion[1] = data.posicion[1];
 
-       
+
     }
 
     public void QuitGame()

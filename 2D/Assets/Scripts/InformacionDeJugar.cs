@@ -14,7 +14,17 @@ public class InformacionDeJugar
         cartas = juego.GetCartas();
 
         posicion = new float[2];
-        posicion[0] = 0;
-        posicion[1] = 0;
+        if (juego.transform.position.x ==null && juego.transform.position.y == null)
+        {
+            posicion[0] = 0;
+            posicion[1] = 0;
+        }
+        else
+        {
+            posicion[0] = juego.transform.position.x;
+            posicion[1] = juego.transform.position.y;
+
+        }
+        
     }
 }

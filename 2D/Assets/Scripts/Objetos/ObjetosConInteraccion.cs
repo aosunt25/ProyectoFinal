@@ -18,7 +18,7 @@ public class ObjetosConInteraccion : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject == GameMaster.instance.GetClonePLayere())
         {
             if(carta!=null)
                 carta.SetActive(true);

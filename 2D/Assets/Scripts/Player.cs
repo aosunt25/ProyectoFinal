@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     private  Animator animacion;
     private Rigidbody2D rb2d;
-    private Vector2 mov;
+    private Vector2 mov = new Vector2(23,-11);
     public Text presionaECarta;
     public Text presioneEMueble;
     float speed = 5.0f;
@@ -36,8 +36,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            presionaECarta.gameObject.SetActive(false);
-            presioneEMueble.gameObject.SetActive(false);
+            GameMaster.instance.DesactivarPresioneE();
         }
         
        
@@ -47,40 +46,26 @@ public class Player : MonoBehaviour
     {
         rb2d.MovePosition(rb2d.position + mov * speed * Time.deltaTime);
     }
-    /*void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
-        if (other.gameObject.CompareTag("Cartas"))
-        {
-            other.gameObject.SetActive(false);
-        }
-    }*/
+        if (collision.gameObject.tag == "MuebleAct" ||collision.gameObject.tag == "CPU")
+            GameMaster.instance.ActivarPresionarE();
+        
+    }
+    private void onCollisionExit2D(Collider2D collision)
+    {
+        GameMaster.instance.DesactivarPresioneE();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Cartas")
-        {
-            presionaECarta.gameObject.SetActive(true);
-           
-        }
+        if(collision.gameObject.tag!="Puerta")
+            GameMaster.instance.ActivarPresionarE();
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-            presionaECarta.gameObject.SetActive(false);
-            presioneEMueble.gameObject.SetActive(false);
+        GameMaster.instance.DesactivarPresioneE();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-        if (collision.gameObject.tag == "MuebleAct")
-        {
-            presioneEMueble.gameObject.SetActive(true);
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        presioneEMueble.gameObject.SetActive(false);
-        presionaECarta.gameObject.SetActive(false);
-    }
+    
 
 
 }

@@ -8,9 +8,14 @@ public class GameMaster : MonoBehaviour
 {
    
     public GameObject menu;
+    public static float[] posicion;
+    public ControladorDeCamara camara;
     public Inventario inventario;
     public EscritoDeCarta textoCartas;
-    public static Player player;
+    public GameObject player;
+    GameObject cloneplayer;
+    public Text presionaE;
+
     public static int[] arregloDeCartas;
     private int totalDeCartas =4;
     public static int cartasRecogidas=0;
@@ -19,12 +24,22 @@ public class GameMaster : MonoBehaviour
     void Awake()
     {
        
+        Setup();
         Time.timeScale = 1;
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
 
+    }
+    public void Setup()
+    {
+        cloneplayer = Instantiate(player, transform.position, Quaternion.identity) as GameObject;
+        camara.SetPlayer(cloneplayer);
+    }
+    public GameObject GetClonePLayere()
+    {
+        return cloneplayer;
     }
     // Start is called before the first frame update
     void Start()
@@ -73,7 +88,7 @@ public class GameMaster : MonoBehaviour
         Vector2 pos;
         pos.x = data.posicion[0];
         pos.y = data.posicion[1];
-        player.transform.position = pos;
+        transform.position = pos;
     }
     public void QuitGame()
     {
@@ -86,6 +101,7 @@ public class GameMaster : MonoBehaviour
         menu.gameObject.SetActive(false);
         inventario.gameObject.SetActive(false);
     }
+
     public void CartasRecogidas(int carta)
     {
         inventario.ActivarBoton(carta);
@@ -94,5 +110,13 @@ public class GameMaster : MonoBehaviour
     {
         textoCartas.ActivarTexto(carta);
     }
-   
+    public void ActivarPresionarE()
+    {
+        presionaE.gameObject.SetActive(true);
+    }
+    public void DesactivarPresioneE()
+    {
+        presionaE.gameObject.SetActive(false);
+    }
+    
 }

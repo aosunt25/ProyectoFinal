@@ -26,7 +26,7 @@ public class Cartas : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject == GameMaster.instance.GetClonePLayere())
         {
            // botonParaRecoger.gameObject.SetActive(true);
             recogerPermitir = true;
@@ -34,7 +34,7 @@ public class Cartas : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject == GameMaster.instance.GetClonePLayere())
         {
            // botonParaRecoger.gameObject.SetActive(false);
             recogerPermitir = false;

@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
     public void Continuar()
     {
        
-        print(GameMaster.player.transform.position.y);
+      
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }
