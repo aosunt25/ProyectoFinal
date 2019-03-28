@@ -12,6 +12,10 @@ public class Inventario : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+    public void Desactivar()
+    {
+        gameObject.SetActive(false);
+    }
     public void checkAnswer(int bot)
     {
         carta.SetActive();

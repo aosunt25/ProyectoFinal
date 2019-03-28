@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 mov = new Vector2(23,-11);
 
-    float speed = 2.0f;
+    float speed = 1.5f;
 
      void Start()
     {

@@ -18,6 +18,7 @@ public class EscritoDeCarta : MonoBehaviour
         numero = num - 1;
         textocartas[numero].SetActive(true);
     }
+   
     public void SetActive()
     {
         gameObject.SetActive(true);

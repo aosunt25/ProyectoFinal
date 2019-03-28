@@ -17,7 +17,7 @@ public class GameMaster : MonoBehaviour
     public Text presionaE;
 
     public static int[] arregloDeCartas;
-    private int totalDeCartas =4;
+    private int totalDeCartas =10;
     public static int cartasRecogidas=0;
     public Text contadorDeCarta;
     public static GameMaster instance = null;
@@ -62,7 +62,6 @@ public class GameMaster : MonoBehaviour
             inventario.ActivarInventario();
         }
     }
-
     public void contadorDeCartas()
     {
             cartasRecogidas++;
