@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour
+
 {
     private  Animator animacion;
     private Rigidbody2D rb2d;
@@ -57,7 +58,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag!="Puerta")
+        if(collision.gameObject.tag=="Cartas")
             GameMaster.instance.ActivarPresionarE();
     }
     private void OnTriggerExit2D(Collider2D collision)

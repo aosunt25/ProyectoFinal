@@ -9,6 +9,7 @@ TagManager:
   - Mueble
   - Puerta
   - CPU
+  - Piso
   layers:
   - Default
   - TransparentFX

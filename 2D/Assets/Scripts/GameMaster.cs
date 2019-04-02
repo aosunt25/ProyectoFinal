@@ -73,7 +73,10 @@ public class GameMaster : MonoBehaviour
         return cartas;
     }
     
-
+    public void MoverCamara()
+    {
+        camara.transform.position = new Vector3(0, 0, 0);
+    }
     public void SavePlayer()
     {
         SavingSystem.SavePlayer(this);

@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 
 public class Puertas : MonoBehaviour
 {
     public GameObject target;
-
     bool start = false;
     bool isFadeIn = false;
     float alpha = 0;
-    float fadeTime = 1f;
-
-   
+    float fadeTime = 1.5f;
 
     IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,11 +20,13 @@ public class Puertas : MonoBehaviour
             collision.GetComponent<Animator>().enabled = false;
             collision.GetComponent<Player>().enabled = false;
             FadeIn();
-            yield return new WaitForSeconds(fadeTime);
+            yield return new WaitForSeconds(fadeTime-.75f);
             collision.transform.position = target.transform.GetChild(0).transform.position;
-            FadeOut();
+            yield return new WaitForSeconds(fadeTime+.75f);
             collision.GetComponent<Animator>().enabled = true;
             collision.GetComponent<Player>().enabled = true;
+            FadeOut();
+
         }
        
     }
