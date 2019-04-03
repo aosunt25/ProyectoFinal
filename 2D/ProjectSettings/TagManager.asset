@@ -59,6 +59,12 @@ TagManager:
   - name: muebles
     uniqueID: 1302170231
     locked: 0
+  - name: Casa
+    uniqueID: 1266330911
+    locked: 0
+  - name: Plantas
+    uniqueID: 1533177953
+    locked: 0
   - name: Cartas
     uniqueID: 3288604939
     locked: 0

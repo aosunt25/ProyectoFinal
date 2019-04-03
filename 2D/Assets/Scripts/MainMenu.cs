@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    public GameObject controles;
+  
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -13,6 +15,18 @@ public class MainMenu : MonoBehaviour
         GameMaster.posicion[1] = data.posicion[1];*/
 
 
+    }
+    public void Opciones()
+    {
+        gameObject.SetActive(false);
+        controles.SetActive(true);
+      
+    }
+    public void Menu()
+    {
+        gameObject.SetActive(true);
+        controles.SetActive(false);
+       
     }
 
     public void QuitGame()
