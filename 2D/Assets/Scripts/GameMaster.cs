@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
 {
    
     public GameObject menu;
+    public GameObject cpu;
     public static float[] posicion;
     public ControladorDeCamara camara;
     public Inventario inventario;
@@ -25,6 +26,7 @@ public class GameMaster : MonoBehaviour
     {
        
         Setup();
+        
         Time.timeScale = 1;
         if (instance == null)
             instance = this;
@@ -35,7 +37,7 @@ public class GameMaster : MonoBehaviour
     public void Setup()
     {
         cloneplayer = Instantiate(player, transform.position, Quaternion.identity) as GameObject;
-       
+        
     }
     public GameObject GetClonePLayere()
     {
@@ -61,12 +63,17 @@ public class GameMaster : MonoBehaviour
             Time.timeScale = 0;
             inventario.ActivarInventario();
         }
+        if (cartasRecogidas == 10)
+        {
+            cpu.SetActive(true);
+        }
     }
     public void contadorDeCartas()
     {
             cartasRecogidas++;
             contadorDeCarta.text = "CARTAS " + cartasRecogidas + "/" + totalDeCartas;
     }
+    
     public int GetCartas()
     {
         int cartas = cartasRecogidas;
@@ -95,6 +102,10 @@ public class GameMaster : MonoBehaviour
     public void QuitGame()
     {
         SceneManager.LoadScene(0);
+    }
+    public void SiguienteEscena(int e)
+    {
+        SceneManager.LoadScene(e);
     }
 
     public void Continuar()

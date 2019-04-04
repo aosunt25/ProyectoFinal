@@ -25,7 +25,7 @@ public class ControladorDeCamara : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPos, vel * Time.deltaTime);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
     }
 
     void Start()
@@ -38,7 +38,7 @@ public class ControladorDeCamara : MonoBehaviour
         halfheigth = camara.orthographicSize;
         halfwidth = halfheigth * Screen.width / Screen.height;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, targetPos, vel * Time.deltaTime);

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 43896ab07cfd34c2da9ab7348ff222a5
+  - enabled: 1
+    path: Assets/Scenes/Cambio de Acto.unity
+    guid: 8e60a67dde2cd435283042ee82d64170
   m_configObjects: {}

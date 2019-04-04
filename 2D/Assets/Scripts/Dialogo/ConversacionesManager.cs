@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ConversacionesManager : MonoBehaviour
 {
+    public int NumDeSiguienteEscena;
     public Text nameText;
     public Text dialogueText;
     public GameObject dialogoCanvas;
@@ -36,6 +37,7 @@ public class ConversacionesManager : MonoBehaviour
         if (oraciones.Count == 0)
         {
             EndDialogue();
+            GameMaster.instance.SiguienteEscena(NumDeSiguienteEscena);
             return;
         }
 

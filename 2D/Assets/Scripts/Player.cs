@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "MuebleAct" ||collision.gameObject.tag == "CPU")
+        if (collision.gameObject.tag == "CPU")
             GameMaster.instance.ActivarPresionarE();
         
     }
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag=="Cartas")
+        if(collision.gameObject.tag == "MuebleAct" || collision.gameObject.tag=="Cartas")
             GameMaster.instance.ActivarPresionarE();
     }
     private void OnTriggerExit2D(Collider2D collision)
