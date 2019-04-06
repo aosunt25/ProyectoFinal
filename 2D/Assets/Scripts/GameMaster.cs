@@ -16,6 +16,8 @@ public class GameMaster : MonoBehaviour
     public GameObject player;
     GameObject cloneplayer;
     public Text presionaE;
+    public Text presionaF;
+    private bool activarF=false;
 
     public static int[] arregloDeCartas;
     private int totalDeCartas =10;
@@ -62,6 +64,13 @@ public class GameMaster : MonoBehaviour
         {
             Time.timeScale = 0;
             inventario.ActivarInventario();
+            presionaF.gameObject.SetActive(false);
+            activarF=true;
+
+                  }
+        if (cartasRecogidas==1 ) { 
+            ActivarTextoF();
+            
         }
         if (cartasRecogidas == 10)
         {
@@ -130,6 +139,15 @@ public class GameMaster : MonoBehaviour
     public void DesactivarPresioneE()
     {
         presionaE.gameObject.SetActive(false);
+    }
+    public void ActivarTextoF(){
+        if(!activarF){
+            presionaF.gameObject.SetActive(true);
+
+            }
+        else{
+            presionaF.gameObject.SetActive(false);
+            }
     }
     
 }
