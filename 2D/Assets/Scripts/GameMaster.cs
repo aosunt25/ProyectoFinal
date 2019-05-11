@@ -9,6 +9,9 @@ public class GameMaster : MonoBehaviour
    
     public GameObject menu;
     public GameObject cpu;
+    public GameObject sotano;
+    public GameObject cpu2;
+    public GameObject cpu3;
     public static float[] posicion;
     public ControladorDeCamara camara;
     public Inventario inventario;
@@ -20,7 +23,7 @@ public class GameMaster : MonoBehaviour
     private bool activarF=false;
 
     public static int[] arregloDeCartas;
-    private int totalDeCartas =10;
+    public int totalDeCartas;
     public static int cartasRecogidas=0;
     public Text contadorDeCarta;
     public static GameMaster instance = null;
@@ -75,6 +78,17 @@ public class GameMaster : MonoBehaviour
         if (cartasRecogidas == 10)
         {
             cpu.SetActive(true);
+        }
+        if (cartasRecogidas == 29)
+        {
+            sotano.SetActive(true);
+        }
+        if (cartasRecogidas == 20) {
+            cpu2.SetActive(true);
+        }
+        if (cartasRecogidas == 30)
+        {
+            cpu3.SetActive(true);
         }
     }
     public void contadorDeCartas()

@@ -71,6 +71,9 @@ TagManager:
   - name: Jugador
     uniqueID: 3433608839
     locked: 0
+  - name: Arboles
+    uniqueID: 4019367339
+    locked: 0
   - name: Escrito
     uniqueID: 554167279
     locked: 0
