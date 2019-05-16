@@ -7,24 +7,19 @@ public class InformacionDeJugar
 {
   
     public int cartas;
+    public int acto;
     public float[] posicion;
+    public int[] cartasActivarInventario;
 
     public InformacionDeJugar( GameMaster juego)
     {
         cartas = juego.GetCartas();
-
+        acto = juego.escenaActual;
         posicion = new float[2];
-        if (juego.transform.position.x ==null && juego.transform.position.y == null)
-        {
-            posicion[0] = 0;
-            posicion[1] = 0;
-        }
-        else
-        {
-            posicion[0] = juego.transform.position.x;
-            posicion[1] = juego.transform.position.y;
+        posicion[0]=juego.GetClonePlayerPositionX();
+        posicion[1] = juego.GetClonePlayerPositionY();
 
-        }
-        
+        cartasActivarInventario = juego.CartasaActivar();
+
     }
 }

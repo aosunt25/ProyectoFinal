@@ -10,12 +10,23 @@ public class Cartas : MonoBehaviour
     public GameObject texto;
     private bool recogerPermitir;
     public int numDeCarta;
+    public  Cartas instance = null;
     // Start is called before the first frame update
     private void Start()
     {
        // botonParaRecoger.gameObject.SetActive(false);
     }
+    void Awake()
+    {
 
+       
+        
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -50,4 +61,9 @@ public class Cartas : MonoBehaviour
         GameMaster.instance.ActivarTexto(numDeCarta);
         Time.timeScale = 0;
     }
+    public void Destruir()
+    {
+        Destroy(gameObject);
+    }
+    
 }

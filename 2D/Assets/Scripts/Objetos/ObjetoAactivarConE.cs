@@ -7,7 +7,7 @@ public class ObjetoAactivarConE : MonoBehaviour
     public GameObject carta;
     private bool colision = false;
 
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +19,10 @@ public class ObjetoAactivarConE : MonoBehaviour
                 Destroy(gameObject);
             }
 
+        }
+        if (carta == null)
+        {
+            Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
