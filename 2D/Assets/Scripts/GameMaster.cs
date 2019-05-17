@@ -152,9 +152,19 @@ public class GameMaster : MonoBehaviour
     }
     public void PlayGame()
     {
-        InformacionDeJugar data = SavingSystem.CargarJugador();
-        SceneManager.LoadScene(data.acto);
-        cartasRecogidas = data.cartas;
+        
+        if (SavingSystem.CargarJugador() != null)
+        {
+            InformacionDeJugar data = SavingSystem.CargarJugador();
+            SceneManager.LoadScene(data.acto);
+            cartasRecogidas = data.cartas;
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+            cartasRecogidas = 0;
+        }   
+       
        
 
     }
@@ -168,7 +178,15 @@ public class GameMaster : MonoBehaviour
         Vector2 pos;
         pos.x = posicionInicialSiguienteActo[0];
         pos.y = posicionInicialSiguienteActo[1];
-        cloneplayer.transform.position = pos;
+        if (cloneplayer.transform.position != null)
+        {
+            cloneplayer.transform.position = pos;
+        }
+        else
+        {
+            cloneplayer = Instantiate(player, pos, Quaternion.identity) as GameObject;
+        }
+            
         escenaActual += 2;
         SavingSystem.SavePlayer(this);
         SceneManager.LoadScene(e);
@@ -266,6 +284,13 @@ public class GameMaster : MonoBehaviour
                 cartasDestruir[i].Destruir();
             }
         }
+    }
+
+    public void SalirDelJuego()
+    {
+        cartasRecogidas = 0;
+        SavingSystem.DeleteFile();
+        SceneManager.LoadScene(0);
     }
 
    

@@ -23,14 +23,15 @@ public class ControladorDeCamara : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
     }
 
     void Start()
     {
-       
+            player = GameObject.FindGameObjectWithTag("Player");
+            targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        
+
         minBound = bounds.bounds.min;
         maxBound = bounds.bounds.max;
 

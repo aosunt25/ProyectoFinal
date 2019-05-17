@@ -377,25 +377,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1268426128994708956, guid: f1fa7832fef2bd44a894c27b0b93d02c,
-        type: 3}
-      propertyPath: posicion.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268426128994708956, guid: f1fa7832fef2bd44a894c27b0b93d02c,
-        type: 3}
-      propertyPath: posicion.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268426128994708956, guid: f1fa7832fef2bd44a894c27b0b93d02c,
-        type: 3}
-      propertyPath: posicion.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1268426130125856331, guid: f1fa7832fef2bd44a894c27b0b93d02c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1268426130125856331, guid: f1fa7832fef2bd44a894c27b0b93d02c,
         type: 3}
@@ -416,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 1268426130125856331, guid: f1fa7832fef2bd44a894c27b0b93d02c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayGame
+      value: SavePlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1268426130125856331, guid: f1fa7832fef2bd44a894c27b0b93d02c,
         type: 3}
@@ -448,6 +433,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268426128994708956, guid: f1fa7832fef2bd44a894c27b0b93d02c,
+        type: 3}
+      propertyPath: posicion.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268426128994708956, guid: f1fa7832fef2bd44a894c27b0b93d02c,
+        type: 3}
+      propertyPath: posicion.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268426128994708956, guid: f1fa7832fef2bd44a894c27b0b93d02c,
+        type: 3}
+      propertyPath: posicion.Array.data[1]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1fa7832fef2bd44a894c27b0b93d02c, type: 3}

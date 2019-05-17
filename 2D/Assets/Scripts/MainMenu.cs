@@ -34,4 +34,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void SalirJuego()
+    {
+        Application.Quit();
+    }
+
 }

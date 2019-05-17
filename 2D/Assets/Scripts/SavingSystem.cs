@@ -38,4 +38,10 @@ public static class SavingSystem
             return null;
         }
     }
+
+    public static void DeleteFile()
+    {
+        string path = Application.persistentDataPath + "/player.noteToMySelf";
+        File.Delete(path);
+    }
 }
